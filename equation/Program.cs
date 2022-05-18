@@ -46,7 +46,7 @@ namespace equation
             string showRoots = System.Console.ReadLine();
             // if (answer == "y") equation.Solve(true);
             // else equation.Solve(false);
-            equation.Solve(showRoot == "y");
+            equation.Solve(showRoots == "y");
 
             return equation;
         }
