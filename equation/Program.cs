@@ -43,10 +43,14 @@ namespace equation
             equation.Show();
             // solve eq1
             System.Console.WriteLine("Do you want to show roots (y/n)?");
-            string showRoots = System.Console.ReadLine();
-            // if (answer == "y") equation.Solve(true);
-            // else equation.Solve(false);
-            equation.Solve(showRoots == "y");
+            string answer = System.Console.ReadLine();
+
+            // if (showRoots == "y") 
+            //     equation.Solve(true);
+            // else 
+            //     equation.Solve(false);
+            bool showRoots = answer == "y";
+            equation.Solve(showRoots);
 
             return equation;
         }
