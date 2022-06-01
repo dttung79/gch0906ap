@@ -29,7 +29,6 @@ namespace BankProject
             Console.WriteLine("1. Withdraw");
             Console.WriteLine("2. Deposit");
             Console.WriteLine("3. Show info");
-            Console.WriteLine("4. Exit");
         }
         private int GetUserChoice()
         {
@@ -51,7 +50,7 @@ namespace BankProject
                 case 1: WithDraw(); break;
                 case 2: Deposit(); break;
                 case 3: acc.ShowInfo(); break;
-                case 4: Exit(); break;
+                default: Console.WriteLine("Invalid choice!"); break;
             }
         }
         private void WithDraw()
@@ -65,10 +64,6 @@ namespace BankProject
             Console.Write("Enter amount to deposit: ");
             double amount = double.Parse(Console.ReadLine());
             acc.Deposit(amount);
-        }
-        private void Exit()
-        {
-            Console.WriteLine("Have a good day!");
         }
 
     }

@@ -14,6 +14,14 @@ namespace BankProject
         public string Name { get; set; }
         public string Password { get; set; }
 
+        public Account()
+        {
+            id = ++count;
+            Name = "John Doe";
+            Password = "123";
+            balance = 0;
+        }
+
         public Account(string name, string password, double balance)
         {
             id = count++;
@@ -21,13 +29,13 @@ namespace BankProject
             Password = password;    // property = parameter
             this.balance = balance; // attribute = parameter
         }
-        public void ShowInfo()
+        public virtual void ShowInfo()
         {
             Console.WriteLine("ID: {0}", id);
             Console.WriteLine("Name: {0}", Name);
-            Console.WriteLine("Balance: {0}", balance);
+            Console.WriteLine("Balance: " + balance);
         }
-        public void Withdraw(double amount)
+        public virtual void Withdraw(double amount)
         {
             if (amount > balance)
                 Console.WriteLine("Not enough money!");
