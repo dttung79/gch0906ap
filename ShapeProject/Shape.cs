@@ -2,7 +2,7 @@ using System;
 
 namespace ShapeProject
 {
-    public class Shape
+    public abstract class Shape
     {
         public string Name { get; set; }
         protected string type;
@@ -22,14 +22,10 @@ namespace ShapeProject
             Name = name;
             type = "Shape";
         }
-        public virtual double Area()
-        {
-            return 0.0;
-        }
-        public virtual double Perimeter()
-        {
-            return 0.0;
-        }
+        public abstract double Area();
+        
+        public abstract double Perimeter();
+        
         public override string ToString()
         {
             return String.Format("{0} {1}, S = {2:0.00}, P = {3:0.00}", Type , Name, Area(), Perimeter());
