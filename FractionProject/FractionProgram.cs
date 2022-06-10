@@ -1,6 +1,6 @@
 using System;
 
-namespace FractionConsole
+namespace FractionProject
 {
     public class FractionProgram : MenuProgram
     {
@@ -34,7 +34,7 @@ namespace FractionConsole
                     Console.WriteLine(message);
                     int n = GetNumber("Enter numerator");
                     int d = GetNumber("Enter denominator");
-                    return new SimpleFraction(n, d);
+                    return new Fraction(n, d);
                 }
                 catch (DivideByZeroException ex)
                 {
@@ -68,7 +68,9 @@ namespace FractionConsole
         {
             Fraction f1 = AddFactions("Enter first Fraction: ");
             Fraction f2 = AddFactions("Enter second Fraction: ");
-            Fraction f3 = f1.Add(f2);
+            SimpleFraction sf1 = new SimpleFraction(f1.Numerator, f1.Denominator);
+            SimpleFraction sf2 = new SimpleFraction(f2.Numerator, f2.Denominator);
+            Fraction f3 = sf1.Add(sf2);
             Console.WriteLine("{0} + {1} = {2}", f1, f2, f3);
         }
         private void DemoSubtractFactions()

@@ -1,30 +1,31 @@
 using System;
 
-namespace FractionConsole
+namespace FractionProject
 {
     public class SimpleFraction : Fraction
     {
         public SimpleFraction()
         {
-
+            int ucln = UCLN(Numerator, Denominator);
+            Numerator /= ucln;
+            Denominator /= ucln;
         }
 
         public SimpleFraction(int n, int d) : base(n, d)
         {
-
+            int ucln = UCLN(Numerator, Denominator);
+            Numerator /= ucln;
+            Denominator /= ucln;
         }
 
         private SimpleFraction Simple(Fraction f)
         {
-            int uscln = USCLN(f.Numerator, f.Denominator);
-            int n = f.Numerator / uscln;
-            int d = f.Denominator / uscln;
-            return new SimpleFraction(n, d);
+            return new SimpleFraction(f.Numerator, f.Denominator);
         }
-        private int USCLN(int a, int b)
+        private int UCLN(int a, int b)
         {
             if (b == 0) return a;
-            return USCLN(b, a % b);
+            return UCLN(b, a % b);
         }
 
         public override Fraction Add(Fraction f)

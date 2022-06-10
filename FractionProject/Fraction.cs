@@ -30,25 +30,25 @@ namespace FractionProject
             Numerator = n;
             Denominator = d;
         }
-        public Fraction Add(Fraction f)
+        public virtual Fraction Add(Fraction f)
         {
             int n = Numerator * f.Denominator + Denominator * f.Numerator;
             int d = Denominator * f.Denominator;
             return new Fraction(n, d);
         }
-        public Fraction Sub(Fraction f)
+        public virtual Fraction Sub(Fraction f)
         {
             int n = Numerator * f.Denominator - Denominator * f.Numerator;
             int d = Denominator * f.Denominator;
             return new Fraction(n, d);
         }
-        public Fraction Mul(Fraction f)
+        public virtual Fraction Mul(Fraction f)
         {
             int n = Numerator * f.Numerator;
             int d = Denominator * f.Denominator;
             return new Fraction(n, d);
         }
-        public Fraction Div(Fraction f)
+        public virtual Fraction Div(Fraction f)
         {
             int n = Numerator * f.Denominator;
             int d = Denominator * f.Numerator;
